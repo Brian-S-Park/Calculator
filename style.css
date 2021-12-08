@@ -1,0 +1,75 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding:70px;
+}
+.box{
+    display:flex;
+    width:600px;
+    height:750px;
+    background-color: black;
+    justify-content: center;
+
+    border-radius:12%;
+    padding:30px;
+}
+.bottomNumber{
+    width:97px;
+    background-color:darkslategrey;
+    border-color:darkslategrey;
+    color:white;
+}
+button{
+    justify-content: center;
+    padding:40px;
+    border-radius:100%;
+}
+.buttonList{
+    flex-flow:column wrap;
+    width:420px;
+    justify-content:center;
+    padding:30px;
+}
+.greyButtons{
+    background-color:darkgrey;
+    border-color:darkgrey;
+    color:white;
+}
+.inside{
+    padding:20px;
+    justify-content: center;
+}
+.longNumber{
+    width: 207px;
+    border-radius:20%;
+    background-color: darkslategrey;
+    border-color:darkslategrey;
+    color:white;
+}
+.numbers{
+    background-color: darkslategrey;
+    border-color:darkslategrey;
+    color:white;
+}
+.orangeNumbers{
+    background-color:orangered;
+    border-color:orangered;
+    color:white;
+}
+p{
+    font-family:"Comic Sans MS";
+    font-weight:600;
+    color:lightgrey;
+}
+.screen{
+    display:flex;
+
+    width:445px;
+    height:100px;
+    padding:20px;
+    background-color:darkslategrey;
+}
+.space{
+    width:330px;
+}
