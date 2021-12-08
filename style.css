@@ -1,13 +1,22 @@
+.Answer{
+    color:white;
+    align-items: center;
+    justify-content: center;
+    font-size:70px;
+    font-family:'Comic Sans MS';
+}
 body{
     display:flex;
+    flex-flow:column;
     justify-content: center;
     align-items:center;
     padding:70px;
+    height: 85vh;
 }
 .box{
     display:flex;
     width:600px;
-    height:750px;
+    height:760px;
     background-color: black;
     justify-content: center;
 
@@ -24,6 +33,9 @@ button{
     justify-content: center;
     padding:40px;
     border-radius:100%;
+    font-family:'Comic Sans MS';
+    font-weight:800;
+    font-size:15px;
 }
 .buttonList{
     flex-flow:column wrap;
@@ -31,17 +43,28 @@ button{
     justify-content:center;
     padding:30px;
 }
+.footer{
+    bottom:fixed;
+    font-family:'Comic Sans MS';
+    font-weight:800;
+    padding:70px;
+    color:white;
+}
 .greyButtons{
     background-color:darkgrey;
     border-color:darkgrey;
     color:white;
+}
+html{
+    flex-flow:column;
+    background-color:#5B4850;
 }
 .inside{
     padding:20px;
     justify-content: center;
 }
 .longNumber{
-    width: 207px;
+    width:217px;
     border-radius:20%;
     background-color: darkslategrey;
     border-color:darkslategrey;
@@ -51,6 +74,7 @@ button{
     background-color: darkslategrey;
     border-color:darkslategrey;
     color:white;
+    width:104px;
 }
 .orangeNumbers{
     background-color:orangered;
