@@ -10,27 +10,32 @@ body{
     flex-flow:column;
     justify-content: center;
     align-items:center;
-    padding:70px;
-    height: 85vh;
+    margin-top:50px;
+    height: 95vh;
+    margin-right:auto;
+    margin-left:auto;
 }
 .box{
     display:flex;
     width:600px;
     height:760px;
     background-color: black;
-    justify-content: center;
-
     border-radius:12%;
-    padding:30px;
+    padding:50px;
+    justify-content:center;
+    align-items:center;
+    max-width:600px;
+    max-height:760px;
+
 }
+
 .bottomNumber{
-    width:97px;
+    width:104px;
     background-color:darkslategrey;
     border-color:darkslategrey;
     color:white;
 }
 button{
-    justify-content: center;
     padding:40px;
     border-radius:100%;
     font-family:'Comic Sans MS';
@@ -38,33 +43,35 @@ button{
     font-size:15px;
 }
 .buttonList{
-    flex-flow:column wrap;
-    width:420px;
+    display:flex;
+    flex-flow:row wrap;
+    width:485px;
     justify-content:center;
-    padding:30px;
+    align-items:center;
+    padding:20px;
 }
 .footer{
-    bottom:fixed;
+    bottom:relative;
     font-family:'Comic Sans MS';
     font-weight:800;
-    padding:70px;
+    padding:50px;
     color:white;
 }
 .greyButtons{
     background-color:darkgrey;
     border-color:darkgrey;
     color:white;
+    width:104px;
+}
+.greyButtons:hover{
+    background-color:grey;
 }
 html{
-    flex-flow:column;
     background-color:#5B4850;
-}
-.inside{
-    padding:20px;
-    justify-content: center;
+
 }
 .longNumber{
-    width:217px;
+    width:200px;
     border-radius:20%;
     background-color: darkslategrey;
     border-color:darkslategrey;
@@ -80,6 +87,10 @@ html{
     background-color:orangered;
     border-color:orangered;
     color:white;
+    width:104px;
+}
+.orangeNumbers:hover{
+    background-color:red;
 }
 p{
     font-family:"Comic Sans MS";
@@ -87,13 +98,10 @@ p{
     color:lightgrey;
 }
 .screen{
-    display:flex;
-
-    width:445px;
+    text-align:right;
+    width:485px;
     height:100px;
     padding:20px;
     background-color:darkslategrey;
-}
-.space{
-    width:330px;
+    border-radius:3%;
 }

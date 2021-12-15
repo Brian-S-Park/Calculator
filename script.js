@@ -21,10 +21,7 @@ Equals_button.addEventListener('click',function(){
 Clear_button.addEventListener('click',function(){
     Answer_div.innerHTML="0";
     Clear_button.style.backgroundColor="grey";
-    //buttonType=Clear_button.value;
     greyAnimate();
-    //console.log(buttonType);
-    Clear_button.style.width="105px";
     Clear_button.innerHTML="C";
 });
 Sign_button.addEventListener('click',function(){
