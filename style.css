@@ -97,6 +97,10 @@ p{
     font-weight:600;
     color:lightgrey;
 }
+.pastAnswers{
+    color:grey;
+    font-family:'Comic Sans MS';
+}
 .screen{
     text-align:right;
     width:485px;
