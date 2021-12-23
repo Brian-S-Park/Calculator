@@ -11,14 +11,16 @@ const Sign_button=document.getElementById('sign');
 const Numbers=document.querySelectorAll('[numbers]');
 const pastAnswers=document.getElementById('pastAnswers');
 const plus=document.getElementById('plus');
-
+let num=0;
 //Numbers.forEach((button) =>
 //    button.addEventListener('click', () => console.log("meeeeep"))
 //)
 Equals_button.addEventListener('click',function(){
     pastAnswers.innerHTML="30300 + 30303";
-    Answer_div.innerHTML="4000000004";
+    num=9999999999;
     Clear_button.innerHTML="AC";
+//9999999999
+    printOutput(num);
 });
 Clear_button.addEventListener('click',function(){
     Answer_div.innerHTML="0";
@@ -28,7 +30,31 @@ Clear_button.addEventListener('click',function(){
 Sign_button.addEventListener('click',function(){
     
 });
+function getHistory(){
+    return pastAnswers.innerText;
+}
+function printHistory(){
+    pastAnswers.innerText=num;
+}
+function getOutput(num){
+    return Answer_div.innerText;
+}
+function printOutput(num){
+    return Answer_div.innerText=formattedNum(num);
+}
+function formattedNum(num){
+    let n = Number(num);
+    if(n > 9999999999){
+        alert("Overflow Error: The answer was too big!");
+    }
+    else{
+        let value = n.toLocaleString('en');
+        return value;
+    }
+}
+for(let i=0;){
 
+}
 plus.addEventListener('click',function(){
     
 });
@@ -37,9 +63,3 @@ Numbers.forEach((button) => {
       console.log("meeep");
     });
 });
-// function greyAnimate(){
-//     setTimeout(() => {
-//         Clear_button.style.backgroundColor="darkgrey";
-//         Clear_button.style.transition="0.2s";
-//     },200);
-// }
