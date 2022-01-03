@@ -1,5 +1,6 @@
-//Figure out way to pass the value of which button needs the animation
-//Figure out how to pass number values form buttons to Answer_div
+//make list of operators in the eventlistener with if statements
+//make operator do math before displaying
+//get decimal function to work
 const Answer_div=document.getElementById('Answer');
 const Equals_button=document.getElementById('equals');
 const Clear_button=document.getElementById('AC');
@@ -9,8 +10,10 @@ const Plus_button=document.getElementById('plus');
 const Minus_button=document.getElementById('minus');
 const Sign_button=document.getElementById('sign');
 const Numbers=document.getElementsByClassName('numbers');
+const zero=document.getElementsByClassName('longNumber');
 const pastAnswers=document.getElementById('pastAnswers');
-const plus=document.getElementById('plus');
+const plus=document.getElementById('+');
+const decimal=document.getElementsByClassName('bottomNumber');
 let operator=document.getElementsByClassName('orangeNumbers');
 let num=0;
 
@@ -24,11 +27,6 @@ Equals_button.addEventListener('click',function(){
 });
 Clear_button.addEventListener('click',function(){
     Answer_div.innerHTML="0";
-    //pastAnswers.innerHTML="";
-    // if(pastAnswers.value!=undefined){
-    //     alert("yooooo");
-    //     Clear_button.innerHTML="C";
-    // }
     if(Clear_button.innerHTML!="C"){
         //alert("yooooo");
         pastAnswers="";
@@ -68,9 +66,19 @@ function formattedNum(num){
 function reverseNumberFormat(num){
     return Number(num.replace(/,/g,''));
 }
-for(let i =0;i<operator.length;i++){
+for(let i=0;i<operator.length;i++){
     operator[i].addEventListener('click',function(){
-           // alert("This operator is clicked "+this.id);
+           //alert("This operator is clicked "+this.id);
+           let output=reverseNumberFormat(getOutput());
+           if(output!=NaN){
+               //operator[i].
+
+               //Mske button change color and stay until math is doen
+               
+               //output=output+this.id;
+               //printOutput(output);
+           }
+
     });
 }
 for(let i=0;i<Numbers.length;i++){
@@ -83,4 +91,18 @@ for(let i=0;i<Numbers.length;i++){
             }
     });
 }
+zero[0].addEventListener('click',function(){
+        let output=reverseNumberFormat(getOutput());
+        if(output!=NaN){
+            output=output+this.id;
+            printOutput(output);
+        }
+});
+// decimal[0].addEventListener('click',function(){
+//     let output=reverseNumberFormat(getOutput());
+//         output=output+this.id;
+//        // alert(output);
+
+//         printOutput(output);
+// });
 
