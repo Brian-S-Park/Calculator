@@ -8,24 +8,37 @@ const Multiply_button=document.getElementById('multiply');
 const Plus_button=document.getElementById('plus');
 const Minus_button=document.getElementById('minus');
 const Sign_button=document.getElementById('sign');
-const Numbers=document.querySelectorAll('[numbers]');
+const Numbers=document.getElementsByClassName('numbers');
 const pastAnswers=document.getElementById('pastAnswers');
 const plus=document.getElementById('plus');
+let operator=document.getElementsByClassName('orangeNumbers');
 let num=0;
-//Numbers.forEach((button) =>
-//    button.addEventListener('click', () => console.log("meeeeep"))
-//)
+
 Equals_button.addEventListener('click',function(){
-    pastAnswers.innerHTML="30300 + 30303";
-    num=9999999999;
     Clear_button.innerHTML="AC";
-//9999999999
+    num=reverseNumberFormat(getOutput());
     printOutput(num);
+    pastAnswers.innerHTML=num;
+    console.log(pastAnswers.value);
+
 });
 Clear_button.addEventListener('click',function(){
     Answer_div.innerHTML="0";
-    pastAnswers.innerHTML="";
-    Clear_button.innerHTML="C";
+    //pastAnswers.innerHTML="";
+    // if(pastAnswers.value!=undefined){
+    //     alert("yooooo");
+    //     Clear_button.innerHTML="C";
+    // }
+    if(Clear_button.innerHTML!="C"){
+        //alert("yooooo");
+        pastAnswers="";
+        Answer_div.innerHTML="0";
+
+    }
+    if(Clear_button.innerHTML==="C"){
+        //alert("yooooo");
+        Clear_button.innerHTML="AC";
+    }
 });
 Sign_button.addEventListener('click',function(){
     
@@ -33,14 +46,14 @@ Sign_button.addEventListener('click',function(){
 function getHistory(){
     return pastAnswers.innerText;
 }
-function printHistory(){
+function printHistory(num){
     pastAnswers.innerText=num;
 }
-function getOutput(num){
+function getOutput(){
     return Answer_div.innerText;
 }
 function printOutput(num){
-    return Answer_div.innerText=formattedNum(num);
+    Answer_div.innerText=formattedNum(num);
 }
 function formattedNum(num){
     let n = Number(num);
@@ -52,14 +65,22 @@ function formattedNum(num){
         return value;
     }
 }
-for(let i=0;){
-
+function reverseNumberFormat(num){
+    return Number(num.replace(/,/g,''));
 }
-plus.addEventListener('click',function(){
-    
-});
-Numbers.forEach((button) => {
-    button.addEventListener('click', () => {
-      console.log("meeep");
+for(let i =0;i<operator.length;i++){
+    operator[i].addEventListener('click',function(){
+           // alert("This operator is clicked "+this.id);
     });
-});
+}
+for(let i=0;i<Numbers.length;i++){
+    Numbers[i].addEventListener('click',function(){
+            let output=reverseNumberFormat(getOutput());
+            Clear_button.innerHTML="C";
+            if(output!=NaN){
+                output=output+this.id;
+                printOutput(output);
+            }
+    });
+}
+
