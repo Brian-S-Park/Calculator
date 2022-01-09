@@ -14,41 +14,34 @@ const plus=document.getElementById('+');
 //const decimal=document.getElementsByClassName('bottomNumber');
 let operator=document.getElementsByClassName('orangeNumbers');
 let num=0;
+let first=0;
 let next=0;
-let second=0;
-
 let count=0;
+let operate="";
 
-Equals_button.addEventListener('click',function(){
-    Clear_button.innerHTML="AC";
-    num=reverseNumberFormat(getOutput());
-    printOutput(num);
-    pastAnswers.innerHTML=num;
-    //console.log(pastAnswers.value);
-    //alert(num);
 
-});
 Clear_button.addEventListener('click',function(){
-    Answer_div.innerHTML="0";
     for(let i=0;i<operator.length;i++){
                operator[i].style.backgroundColor = "orangered";
                operator[i].style.color = "white";
                count=0;
     }
-    if(Clear_button.innerHTML==="AC"){
-        printHistory("");
-        printOutput(0);
-    }
-    if(Clear_button.innerHTML!="C"){
-        if(pastAnswers===NaN){
+
+alert(Answer_div.innerHTML);
+    if(pastAnswers!=NaN){
+        if(Clear_button.innerHTML==="AC"){
             printHistory("");
+            printOutput();
+            alert();
         }
-        Answer_div.innerHTML="0";
+        if(Clear_button.innerHTML==="C"){
+            Clear_button.innerHTML="AC";
+            Answer_div.innerHTML="";
+    
+        }
 
     }
-    if(Clear_button.innerHTML==="C"){
-        Clear_button.innerHTML="AC";
-    }
+
 });
 
 Sign_button.addEventListener('click',function(){
@@ -79,6 +72,8 @@ function formattedNum(num){
 function reverseNumberFormat(num){
     return Number(num.replace(/,/g,''));
 }
+
+
 for(let i=0;i<operator.length;i++){
     operator[i].addEventListener('click',function(){
            //alert("This operator is clicked "+this.id);
@@ -87,23 +82,27 @@ for(let i=0;i<operator.length;i++){
                 count++;
                 operator[i].style.backgroundColor = "white";
                 operator[i].style.color = "orangered";
-           }
-           //move next vairable and output in this area so that operation can occur in the if statements
-           if(this.id==="+"){
-               next=output;
-               console.log(next)
-
-               //printHistory(output);
+                first=reverseNumberFormat(getOutput());
                 Answer_div.innerHTML="";
-                // output=reverseNumberFormat(getOutput());
-                // console.log(output);
-                // num=next+output;
-                // console.log(num);
-               
+                operate=operator[i].id;
+           }
+           if(this.id==='='){
+            for(let i=0;i<operator.length;i++){
+                operator[i].style.backgroundColor="orangered";
+                operator[i].style.color="white";                  
             }
-           if(this.id==='-'){printHistory(num);}
-           if(this.id==='*'){}
-           if(this.id==='/'){}
+                Clear_button.innerHTML="AC";
+
+                next=reverseNumberFormat(getOutput());
+                //printOutput(output);
+                //pastAnswers.innerHTML=output;
+                if(operate==='+'){num=first+next;alert();}
+                if(operate==='-'){num=first-next}
+                if(operate==='*'){num=first*next}
+                if(operate==='/'){num=first/next}
+                Answer_div.innerHTML=num;
+                count=0;
+           }
 
     });
 }
