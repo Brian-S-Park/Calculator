@@ -1,7 +1,8 @@
 //get decimal function to work
 const Answer_div=document.getElementById('Answer');
 const Equals_button=document.getElementById('equals');
-const Clear_button=document.getElementById('AC');
+const allClear_button=document.getElementById('AC');
+const Clear_button=document.getElementById('C');
 const Divide_button=document.getElementById('divide');
 const Multiply_button=document.getElementById('multiply');
 //const Plus_button=document.getElementById('plus');
@@ -21,25 +22,25 @@ let operate="";
 
 
 Clear_button.addEventListener('click',function(){
-    for(let i=0;i<operator.length;i++){
-               operator[i].style.backgroundColor = "orangered";
-               operator[i].style.color = "white";
-               count=0;
+    let output=reverseNumberFormat(getOutput());
+    if(output!=0){
+        Answer_div.innerHTML="";
     }
+});
+allClear_button.addEventListener('click',function(){
+    for(let i=0;i<operator.length;i++){
+        operator[i].style.backgroundColor = "orangered";
+        operator[i].style.color = "white";
+        count=0;
+    }
+    let output=reverseNumberFormat(getOutput());
 
-alert(Answer_div.innerHTML);
-    if(pastAnswers!=NaN){
-        if(Clear_button.innerHTML==="AC"){
+    if(output!=NaN){
             printHistory("");
-            printOutput();
-            alert();
-        }
-        if(Clear_button.innerHTML==="C"){
-            Clear_button.innerHTML="AC";
-            Answer_div.innerHTML="";
-    
-        }
-
+            printOutput("");
+            num=0;
+            first=0;
+            next=0;   
     }
 
 });
@@ -64,6 +65,7 @@ function formattedNum(num){
     if(n > 9999999999){
         alert("Overflow Error: The answer was too big!");
     }
+
     else{
         let value = n.toLocaleString('en');
         return value;
@@ -91,26 +93,25 @@ for(let i=0;i<operator.length;i++){
                 operator[i].style.backgroundColor="orangered";
                 operator[i].style.color="white";                  
             }
-                Clear_button.innerHTML="AC";
 
                 next=reverseNumberFormat(getOutput());
                 //printOutput(output);
                 //pastAnswers.innerHTML=output;
-                if(operate==='+'){num=first+next;alert();}
-                if(operate==='-'){num=first-next}
-                if(operate==='*'){num=first*next}
-                if(operate==='/'){num=first/next}
-                Answer_div.innerHTML=num;
+                if(operate==='+'){num=first+next;printOutput(num);}
+                if(operate==='-'){num=first-next;printOutput(num);}
+                if(operate==='*'){num=first*next;printOutput(num);}
+                if(operate==='/'){num=first/next;printOutput(num);}
                 count=0;
            }
 
     });
 }
+
 for(let i=0;i<Numbers.length;i++){
     Numbers[i].addEventListener('click',function(){
             let output=reverseNumberFormat(getOutput());
-            Clear_button.innerHTML="C";
             if(output!=NaN){
+                //alert(output);
                 output=output+this.id;
                 printOutput(output);
             }
