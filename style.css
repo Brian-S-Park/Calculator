@@ -16,9 +16,9 @@ body{
     margin-left:auto;
     
     margin-top:0;
-    -webkit-transform: scale(0.85);
-    -moz-transform: scale(0.85);
-         transform: scale(0.85);
+    -webkit-transform: scale(0.90);
+    -moz-transform: scale(0.90);
+         transform: scale(0.90);
 }
 .box{
     display:flex;
