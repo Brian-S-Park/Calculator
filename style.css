@@ -14,18 +14,23 @@ body{
     height: 95vh;
     margin-right:auto;
     margin-left:auto;
+    
+    margin-top:0;
+    -webkit-transform: scale(0.85);
+    -moz-transform: scale(0.85);
+         transform: scale(0.85);
 }
 .box{
     display:flex;
-    width:600px;
-    height:760px;
+    max-width:600px;
+    max-height:760px;
     background-color: black;
     border-radius:12%;
     padding:50px;
     justify-content:center;
     align-items:center;
-    max-width:600px;
-    max-height:760px;
+    width:600px;
+    height:760px;
 
 }
 
@@ -35,12 +40,15 @@ body{
     border-color:darkslategrey;
     color:white;
 }
+.bottomNumber:hover{
+    background-color:#457373;
+}
 button{
     padding:40px;
     border-radius:50%;
     font-family:'Comic Sans MS';
     font-weight:800;
-    font-size:15px;
+    font-size:18px;
     margin:5px;
     border-width:0;
     cursor:pointer;
@@ -68,6 +76,7 @@ button{
 }
 .greyButtons:hover{
     background-color:grey;
+    color:lightgrey;
 }
 html{
     background-color:#5B4850;
@@ -80,11 +89,17 @@ html{
     border-color:darkslategrey;
     color:white;
 }
+.longNumber:hover{
+    background-color:#457373;
+}
 .numbers{
     background-color: darkslategrey;
     border-color:darkslategrey;
     color:white;
     width:104px;
+}
+.numbers:hover{
+    background-color:#457373;
 }
 .orangeNumbers{
     background-color:orangered;
@@ -92,9 +107,7 @@ html{
     color:white;
     width:104px;
 }
-.orangeNumbers:hover{
-    background-color:red;
-}
+
 p{
     font-family:"Comic Sans MS";
     font-weight:600;
@@ -111,4 +124,7 @@ p{
     padding:20px;
     background-color:darkslategrey;
     border-radius:3%;
+    max-width:490px;
+    max-height:120px;
 }
+
